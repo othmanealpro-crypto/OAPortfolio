@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Othmane Al Amrani · Ingénieur logiciel</title>
+  <meta name="description" content="Portfolio d'Othmane Al Amrani, ingénieur logiciel full stack (EMSI 2026) : Flutter, Django, Spring Boot, microservices, PostgreSQL et IA générative (RAG).">
+  <meta name="author" content="Othmane Al Amrani">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Othmane Al Amrani · Ingénieur logiciel">
+  <meta property="og:description" content="Ingénieur logiciel full stack orienté IA. Trois stages à Bank Al-Maghrib, applications Flutter, Django, Spring Boot et chatbots RAG.">
+  <meta property="og:locale" content="fr_MA">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&family=Reem+Kufi:wght@500..700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script>
+    // Thème mémorisé + mode onglets, appliqués avant l'affichage pour éviter un flash.
+    (function (r) {
+      var tabs = ["accueil", "experience", "projets", "competences", "formation", "contact"];
+      var h = location.hash.slice(1);
+      r.classList.add("js");
+      r.setAttribute("data-start", tabs.indexOf(h) > -1 ? h : "accueil");
+      // Filet de sécurité : si le script principal ne se charge pas, tout redevient visible.
+      setTimeout(function () { if (!r.hasAttribute("data-ready")) r.classList.remove("js"); }, 4000);
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") r.setAttribute("data-theme", t);
+      } catch (e) {}
+    })(document.documentElement);
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#accueil" aria-label="Othmane Al Amrani, accueil">
+        <svg class="brand-mark" viewBox="0 0 80 80" aria-hidden="true">
+          <path d="M80 40L68.28 51.71V68.28H51.71L40 80L28.29 68.28H11.72V51.71L0 40L11.72 28.29V11.72H28.29L40 0L51.71 11.72H68.28V28.29Z"/>
+        </svg>
+        <span>O. Al Amrani</span>
+      </a>
+
+      <nav class="tabs" aria-label="Sections du portfolio">
+        <div class="tablist" role="tablist">
+          <span class="tab-indicator" aria-hidden="true"></span>
+          <a class="tab" role="tab" id="tab-accueil" href="#accueil" aria-controls="accueil" aria-selected="true">Accueil</a>
+          <a class="tab" role="tab" id="tab-experience" href="#experience" aria-controls="experience" aria-selected="false">Expérience</a>
+          <a class="tab" role="tab" id="tab-projets" href="#projets" aria-controls="projets" aria-selected="false">Projets</a>
+          <a class="tab" role="tab" id="tab-competences" href="#competences" aria-controls="competences" aria-selected="false">Compétences</a>
+          <a class="tab" role="tab" id="tab-formation" href="#formation" aria-controls="formation" aria-selected="false">Formation</a>
+          <a class="tab" role="tab" id="tab-contact" href="#contact" aria-controls="contact" aria-selected="false">Contact</a>
+        </div>
+      </nav>
+
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Changer de thème">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- ============ ACCUEIL ============ -->
+    <section class="panel" id="accueil" role="tabpanel" aria-labelledby="tab-accueil" tabindex="-1">
+      <div class="hero">
+        <svg class="hero-pattern" aria-hidden="true" focusable="false">
+          <defs>
+            <pattern id="zellige" width="80" height="80" patternUnits="userSpaceOnUse">
+              <g fill="none" stroke-width="1.1">
+                <path d="M80 40L68.28 51.71V68.28H51.71L40 80L28.29 68.28H11.72V51.71L0 40L11.72 28.29V11.72H28.29L40 0L51.71 11.72H68.28V28.29Z"/>
+                <circle cx="40" cy="40" r="13"/>
+                <path d="M0 -12L12 0L0 12L-12 0Z M80 -12L92 0L80 12L68 0Z M0 68L12 80L0 92L-12 80Z M80 68L92 80L80 92L68 80Z"/>
+              </g>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#zellige)"/>
+        </svg>
+
+        <div class="wrap hero-grid">
+          <div class="hero-text">
+            <p class="status" data-reveal><span class="status-dot" aria-hidden="true"></span>En recherche d'un poste d'ingénieur logiciel</p>
+            <h1 class="hero-name" data-reveal>Othmane<br>Al Amrani</h1>
+            <p class="hero-role" data-reveal>Ingénieur logiciel full stack, architecture logicielle et IA</p>
+            <p class="hero-pitch" data-reveal>
+              Je conçois des applications de bout en bout, du mobile en Flutter au backend Django ou Spring,
+              avec des données PostgreSQL et des assistants RAG qui répondent en langage naturel.
+            </p>
+            <div class="hero-cta" data-reveal>
+              <a class="btn btn-primary" href="#projets">Voir mes projets</a>
+              <a class="btn btn-ghost" href="assets/cv-othmane-al-amrani.pdf" target="_blank" rel="noopener">Mon CV (PDF)</a>
+              <a class="btn btn-ghost" href="#contact">Me contacter</a>
+            </div>
+          </div>
+
+          <aside class="spec" aria-label="En bref" data-reveal>
+            <p class="spec-title">Fiche</p>
+            <dl>
+              <div><dt>Diplôme</dt><dd>Ingénieur EMSI (Bac+5), 2026</dd></div>
+              <div><dt>Filière</dt><dd>Informatique et Réseaux, MIAGE</dd></div>
+              <div><dt>Expérience</dt><dd>3 stages à Bank Al-Maghrib</dd></div>
+              <div><dt>Domaines</dt><dd>Full stack, microservices, IA et RAG</dd></div>
+              <div><dt>Coursera</dt><dd>20 certificats (IBM, Meta, Google…)</dd></div>
+              <div><dt>Langues</dt><dd>Français, arabe, anglais</dd></div>
+              <div><dt>Basé à</dt><dd>Rabat, Maroc</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+
+      <div class="wrap panel-body">
+        <div class="profile">
+          <p class="eyebrow" data-reveal>Profil</p>
+          <div class="prose">
+            <p class="lead" data-reveal>
+              Diplômé de l'EMSI en 2026, je suis d'abord développeur logiciel full stack :
+              conception d'applications, backend et frontend, API REST, bases SQL et PostgreSQL, architectures microservices.
+            </p>
+            <p data-reveal>
+              J'y ajoute l'intelligence artificielle, le RAG et l'automatisation pour concevoir des solutions utiles,
+              maintenables et adaptées aux besoins métier.
+            </p>
+            <p data-reveal>
+              Pendant mes trois stages à Bank Al-Maghrib, j'ai appris à partir des besoins réels des utilisateurs,
+              à livrer par itérations et à documenter mon travail pour qu'il puisse être repris.
+              Le contexte d'une banque centrale m'a rendu particulièrement attentif à la sécurité et à la confidentialité des données.
+            </p>
+            <ul class="traits" aria-label="Qualités" data-reveal>
+              <li>Curieux</li>
+              <li>Autonome</li>
+              <li>Rigoureux</li>
+              <li>Esprit d'équipe</li>
+            </ul>
+          </div>
+        </div>
+
+        <a class="next-tab" href="#experience" data-reveal><span class="next-label">Suivant</span><span class="next-name">Expérience</span><span class="next-arrow" aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <!-- ============ EXPÉRIENCE ============ -->
+    <section class="panel" id="experience" role="tabpanel" aria-labelledby="tab-experience" tabindex="-1">
+      <div class="wrap panel-body">
+        <header class="panel-head">
+          <p class="eyebrow" data-reveal>Expérience</p>
+          <h2 data-reveal>Trois stages à Bank Al-Maghrib</h2>
+          <p class="panel-intro" data-reveal>De la DSI au pôle Stratégie, Transformation &amp; Innovation, entre 2024 et 2026.</p>
+        </header>
+
+        <div class="timeline">
+          <span class="tl-rail" aria-hidden="true"></span>
+          <ol>
+            <li class="tl-item" data-reveal>
+              <p class="tl-date"><time datetime="2026-03">Mars 2026</time> – <time datetime="2026-07">juillet 2026</time></p>
+              <div class="tl-body">
+                <h3>Stage Software Engineer</h3>
+                <p class="tl-org">Bank Al-Maghrib · Stratégie, Transformation &amp; Innovation · Rabat</p>
+                <p class="tl-project">Application intelligente de centralisation et d'analyse de publications</p>
+                <ul class="bullets">
+                  <li>Conception et développement de bout en bout, de la collecte des sources jusqu'à la consultation des résultats.</li>
+                  <li>Frontend en Flutter, services backend en Django, ressources organisées par thématiques et stockées dans PostgreSQL avec pgvector.</li>
+                  <li>Pipeline d'insights IA et chatbot RAG pour interroger les publications en langage naturel.</li>
+                  <li>Intégration de FreshRSS, de l'extraction de documents PDF et de composants d'IA (ChatGPT, Ollama), en Agile Scrum.</li>
+                </ul>
+                <ul class="tags" aria-label="Technologies">
+                  <li>Flutter</li><li>Django</li><li>PostgreSQL</li><li>pgvector</li><li>RAG</li><li>ChatGPT</li><li>Ollama</li><li>FreshRSS</li><li>Scrum</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="tl-item" data-reveal>
+              <p class="tl-date"><time datetime="2025-07">Juillet</time> – <time datetime="2025-08">août 2025</time></p>
+              <div class="tl-body">
+                <h3>Stage Software Engineer</h3>
+                <p class="tl-org">Bank Al-Maghrib · Stratégie, Transformation &amp; Innovation · Rabat</p>
+                <p class="tl-project">Agent IA de veille automatisée</p>
+                <ul class="bullets">
+                  <li>Agent qui collecte des publications de recherche économique et accélère leur analyse.</li>
+                  <li>API backend conçue avec FastAPI, persistance des données structurée dans PostgreSQL.</li>
+                  <li>Intégration de ChatGPT pour produire des résumés structurés, plus faciles à exploiter par les utilisateurs.</li>
+                </ul>
+                <ul class="tags" aria-label="Technologies">
+                  <li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>ChatGPT</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="tl-item" data-reveal>
+              <p class="tl-date"><time datetime="2024-08">Août 2024</time></p>
+              <div class="tl-body">
+                <h3>Stage Software Engineer</h3>
+                <p class="tl-org">Bank Al-Maghrib · Direction des Systèmes d'Information · Salé</p>
+                <p class="tl-project">Évaluation de modèles d'IA open source</p>
+                <ul class="bullets">
+                  <li>Évaluation de plusieurs modèles d'IA open source sur des tâches de traitement automatique du langage (NLP).</li>
+                  <li>Comparaison des performances, des limites et des cas d'usage pour orienter les choix techniques de futures applications.</li>
+                </ul>
+                <ul class="tags" aria-label="Domaines">
+                  <li>NLP</li><li>LLM open source</li><li>Benchmark</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <a class="next-tab" href="#projets" data-reveal><span class="next-label">Suivant</span><span class="next-name">Projets</span><span class="next-arrow" aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <!-- ============ PROJETS ============ -->
+    <section class="panel" id="projets" role="tabpanel" aria-labelledby="tab-projets" tabindex="-1">
+      <div class="wrap panel-body">
+        <header class="panel-head">
+          <p class="eyebrow" data-reveal>Projets</p>
+          <h2 data-reveal>Quatre projets, du mobile à l'IA</h2>
+          <p class="panel-intro" data-reveal>Des applications mobiles temps réel, une architecture microservices et des assistants RAG.</p>
+        </header>
+
+        <div class="projects">
+          <!-- DailyFlow -->
+          <article class="project project-featured" data-reveal>
+            <div class="project-content">
+              <p class="project-kind">Projet personnel · en cours</p>
+              <h3>DailyFlow</h3>
+              <p>
+                L'entraînement sportif transformé en jeu de rôle. Chaque joueur choisit une classe
+                (gym, calisthenics, athletics, cardio, mobility) et reçoit des quêtes quotidiennes adaptées à son rang,
+                de E à S. Il gagne de l'XP, ouvre un coffre chaque jour, habille son avatar et rejoint une guilde
+                avec chat et expéditions en donjon.
+              </p>
+              <ul class="bullets">
+                <li>Progression (XP, niveau, points, titres) calculée uniquement par des fonctions serveur PostgreSQL : le client ne peut pas l'écrire.</li>
+                <li>Chat de guilde réservé aux membres, limité à 5 messages par 10 secondes.</li>
+                <li>Règles anti-triche couvertes par des tests SQL, logique client testée sous Node, API testée avec Postman.</li>
+              </ul>
+              <ul class="tags" aria-label="Technologies">
+                <li>React Native</li><li>Expo</li><li>TypeScript</li><li>Supabase</li><li>PostgreSQL</li><li>Tests SQL</li>
+              </ul>
+            </div>
+
+            <figure class="preview preview-df">
+              <div class="phone" aria-hidden="true">
+                <div class="phone-notch"></div>
+                <div class="screen df">
+                  <div class="df-halo"></div>
+                  <div class="df-top">
+                    <div class="df-avatar"><span></span></div>
+                    <div class="df-id">
+                      <p class="df-name">Chasseur</p>
+                      <p class="df-level">Niv. 12</p>
+                    </div>
+                    <span class="df-rank">C</span>
+                  </div>
+                  <div class="df-xp"><span class="df-xp-fill"></span></div>
+                  <div class="df-counters">
+                    <span><i class="df-gem"></i>240 PB</span>
+                    <span><i class="df-flame"></i>Série 7 j</span>
+                  </div>
+
+                  <p class="df-section">Quêtes du jour</p>
+                  <ul class="df-quests">
+                    <li class="is-done"><i class="df-check"></i><span>20 pompes</span><b>+30 XP</b></li>
+                    <li class="df-q-live"><i class="df-check"></i><span>Gainage 2 × 45 s</span><b>+25 XP</b><em class="df-toast">+25 XP</em></li>
+                    <li><i class="df-check"></i><span>10 min de mobilité</span><b>+20 XP</b></li>
+                  </ul>
+
+                  <div class="df-chest">
+                    <i class="df-chest-icon"></i>
+                    <div class="df-chest-text">
+                      <p>Coffre du jour</p>
+                      <div class="df-pips"><i class="on"></i><i class="on"></i><i class="df-pip-live"></i></div>
+                    </div>
+                    <span class="df-chest-ready">Prêt</span>
+                  </div>
+
+                  <div class="df-tabbar"><i class="on"></i><i></i><i></i><i></i></div>
+                </div>
+              </div>
+              <figcaption>Maquette de l'écran Accueil</figcaption>
+            </figure>
+          </article>
+
+          <div class="project-row">
+            <!-- AgriGPT -->
+            <article class="project" data-reveal>
+              <figure class="preview preview-agri">
+                <div class="win" aria-hidden="true">
+                  <div class="win-bar"><i></i><i></i><i></i><span>AgriGPT</span></div>
+                  <div class="win-body agri">
+                    <div class="agri-doc"><span class="agri-pdf">PDF</span><span class="agri-file">guide_cultures.pdf</span><span class="agri-ok">indexé</span></div>
+                    <div class="bubble bubble-user">Quand irriguer le blé en montaison ?</div>
+                    <div class="bubble bubble-bot">
+                      <span class="typing"><i></i><i></i><i></i></span>
+                      <span class="skel" style="--w: 92%"></span>
+                      <span class="skel" style="--w: 78%"></span>
+                      <span class="skel" style="--w: 55%"></span>
+                      <span class="agri-source">Source : guide_cultures.pdf · p. 12</span>
+                    </div>
+                  </div>
+                </div>
+                <figcaption>Maquette du chat</figcaption>
+              </figure>
+              <div class="project-content">
+                <p class="project-kind">Assistant IA · 2026</p>
+                <h3>AgriGPT</h3>
+                <p>
+                  Un assistant agricole conversationnel qui analyse des documents PDF, fait une recherche sémantique
+                  et fournit des réponses contextualisées grâce au RAG.
+                </p>
+                <ol class="flow" aria-label="Chaîne de traitement">
+                  <li>PDF</li><li>PyMuPDF</li><li>FAISS</li><li>Ollama</li><li>Réponse</li>
+                </ol>
+                <ul class="tags" aria-label="Technologies">
+                  <li>Python</li><li>FastAPI</li><li>Streamlit</li><li>FAISS</li><li>Ollama</li><li>RAG</li>
+                </ul>
+                <a class="code-link" href="https://github.com/othmanealpro-crypto/AgriRAG-Starter" target="_blank" rel="noopener">Code sur GitHub<span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <!-- Cabinet médical -->
+            <article class="project" data-reveal>
+              <figure class="preview preview-med">
+                <div class="win" aria-hidden="true">
+                  <div class="win-bar"><i></i><i></i><i></i><span>Cabinet · Rendez-vous</span></div>
+                  <div class="win-body med">
+                    <div class="med-side"><i class="on"></i><i></i><i></i></div>
+                    <div class="med-main">
+                      <div class="med-head"><span>Aujourd'hui</span><span class="med-count">3 RDV</span></div>
+                      <ul class="med-rows">
+                        <li><span class="med-time">09:00</span><span class="skel" style="--w: 70%"></span><span class="pill pill-ok">Confirmé</span></li>
+                        <li><span class="med-time">09:30</span><span class="skel" style="--w: 55%"></span><span class="pill pill-wait">En attente</span></li>
+                        <li><span class="med-time">10:15</span><span class="skel" style="--w: 80%"></span><span class="pill pill-ok">Confirmé</span></li>
+                      </ul>
+                      <div class="med-services">
+                        <span><i></i>patients</span><span><i></i>médecins</span><span><i></i>rdv</span><span><i></i>eureka</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <figcaption>Maquette du tableau de bord</figcaption>
+              </figure>
+              <div class="project-content">
+                <p class="project-kind">Microservices · 2025</p>
+                <h3>Gestion de cabinet médical</h3>
+                <p>
+                  Un tableau de bord pour gérer patients, médecins et rendez-vous, découpé en microservices
+                  derrière une API Gateway, avec découverte Eureka et configuration centralisée.
+                </p>
+                <ol class="flow" aria-label="Services">
+                  <li>API Gateway</li><li>Patients</li><li>Médecins</li><li>Rendez-vous</li>
+                </ol>
+                <ul class="tags" aria-label="Technologies">
+                  <li>Java</li><li>Spring Boot</li><li>Spring Cloud</li><li>OpenFeign</li><li>WebClient</li><li>MySQL</li>
+                </ul>
+                <a class="code-link" href="https://github.com/othmanealpro-crypto/Medical-Project" target="_blank" rel="noopener">Code sur GitHub<span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <!-- The Wall -->
+            <article class="project" data-reveal>
+              <figure class="preview preview-wall">
+                <div class="phone phone-crop" aria-hidden="true">
+                  <div class="phone-notch"></div>
+                  <div class="screen wall">
+                    <p class="wall-head">THE WALL</p>
+                    <div class="wall-compose"><span>Exprime-toi…</span><i></i></div>
+                    <div class="wall-feed">
+                      <div class="wall-new">
+                        <div class="wall-new-inner">
+                        <div class="wall-post">
+                          <i class="wall-av"></i>
+                          <div class="wall-lines"><span class="skel" style="--w: 40%"></span><span class="skel" style="--w: 92%"></span><span class="skel" style="--w: 64%"></span></div>
+                          <span class="wall-badge">Nouveau</span>
+                        </div>
+                        </div>
+                      </div>
+                      <div class="wall-post">
+                        <i class="wall-av"></i>
+                        <div class="wall-lines"><span class="skel" style="--w: 50%"></span><span class="skel" style="--w: 85%"></span></div>
+                      </div>
+                      <div class="wall-post">
+                        <i class="wall-av"></i>
+                        <div class="wall-lines"><span class="skel" style="--w: 35%"></span><span class="skel" style="--w: 90%"></span><span class="skel" style="--w: 72%"></span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <figcaption>Maquette du fil en temps réel</figcaption>
+              </figure>
+              <div class="project-content">
+                <p class="project-kind">Application mobile · 2025</p>
+                <h3>The Wall</h3>
+                <p>
+                  Une application sociale : inscription et connexion, profils avec photo, fil de publications
+                  en temps réel, demandes d'amis et messagerie.
+                </p>
+                <ol class="flow" aria-label="Briques Supabase">
+                  <li>Auth</li><li>PostgreSQL</li><li>Realtime</li><li>Storage</li>
+                </ol>
+                <ul class="tags" aria-label="Technologies">
+                  <li>Flutter</li><li>Dart</li><li>Supabase</li>
+                </ul>
+                <a class="code-link" href="https://github.com/othmanealpro-crypto/TheWall_Flutter" target="_blank" rel="noopener">Code sur GitHub<span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <a class="next-tab" href="#competences" data-reveal><span class="next-label">Suivant</span><span class="next-name">Compétences</span><span class="next-arrow" aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <!-- ============ COMPÉTENCES ============ -->
+    <section class="panel" id="competences" role="tabpanel" aria-labelledby="tab-competences" tabindex="-1">
+      <div class="wrap panel-body">
+        <header class="panel-head">
+          <p class="eyebrow" data-reveal>Compétences</p>
+          <h2 data-reveal>Langages, frameworks et outils</h2>
+          <p class="panel-intro" data-reveal>Ce que j'utilise en stage et sur mes projets, du code au déploiement.</p>
+        </header>
+
+        <div class="skills">
+          <div class="skill-group" data-reveal>
+            <h3>Langages</h3>
+            <ul><li>Python</li><li>Java</li><li>Dart</li><li>JavaScript</li><li>TypeScript</li><li>PHP</li><li>C / C++</li><li>HTML5 et CSS3</li><li>SQL</li></ul>
+          </div>
+          <div class="skill-group" data-reveal>
+            <h3>Frameworks</h3>
+            <ul><li>Flutter</li><li>React Native</li><li>Django</li><li>FastAPI</li><li>Spring Boot</li><li>Streamlit</li></ul>
+          </div>
+          <div class="skill-group" data-reveal>
+            <h3>Backend et architecture</h3>
+            <ul><li>API REST</li><li>Microservices</li><li>Spring Cloud et Eureka</li><li>WebClient</li><li>Supabase</li><li>Conception logicielle</li></ul>
+          </div>
+          <div class="skill-group" data-reveal>
+            <h3>Bases de données</h3>
+            <ul><li>PostgreSQL</li><li>pgvector</li><li>MySQL</li><li>SQLite</li></ul>
+          </div>
+          <div class="skill-group" data-reveal>
+            <h3>IA et data</h3>
+            <ul><li>RAG et LLM</li><li>ChatGPT et Ollama</li><li>NLP</li><li>FAISS</li><li>Machine Learning</li><li>PyMuPDF et BeautifulSoup</li><li>Power BI</li><li>LM Studio et Google Colab</li></ul>
+          </div>
+          <div class="skill-group" data-reveal>
+            <h3>Cloud, outils et méthodes</h3>
+            <ul><li>Docker</li><li>Kubernetes et OpenShift</li><li>Azure (Virtual Networks)</li><li>Git et GitHub</li><li>Bash, Linux et Unix</li><li>Agile Scrum</li></ul>
+          </div>
+        </div>
+
+        <div class="languages" data-reveal>
+          <h3>Langues</h3>
+          <ul>
+            <li><span>Arabe</span><span class="lang-level">Langue maternelle</span></li>
+            <li><span>Français</span><span class="lang-level">Natif (C1)</span></li>
+            <li><span>Anglais</span><span class="lang-level">Professionnel</span></li>
+          </ul>
+        </div>
+
+        <a class="next-tab" href="#formation" data-reveal><span class="next-label">Suivant</span><span class="next-name">Formation</span><span class="next-arrow" aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <!-- ============ FORMATION ============ -->
+    <section class="panel" id="formation" role="tabpanel" aria-labelledby="tab-formation" tabindex="-1">
+      <div class="wrap panel-body">
+        <header class="panel-head">
+          <p class="eyebrow" data-reveal>Formation</p>
+          <h2 data-reveal>Ingénieur EMSI, promotion 2026</h2>
+          <p class="panel-intro" data-reveal>Cinq années d'école d'ingénieurs à Rabat, complétées par 20 certificats Coursera.</p>
+        </header>
+
+        <div class="timeline">
+          <span class="tl-rail" aria-hidden="true"></span>
+          <ol>
+            <li class="tl-item" data-reveal>
+              <p class="tl-date"><time datetime="2021">2021</time> – <time datetime="2026">2026</time></p>
+              <div class="tl-body">
+                <h3>Diplôme d'ingénieur (Bac+5)</h3>
+                <p class="tl-org">École Marocaine des Sciences de l'Ingénieur (EMSI) · Rabat</p>
+                <p class="tl-text">
+                  Ingénierie Informatique et Réseaux, option MIAGE
+                  (Méthodes Informatiques Appliquées à la Gestion des Entreprises).
+                </p>
+              </div>
+            </li>
+            <li class="tl-item" data-reveal>
+              <p class="tl-date"><time datetime="2021-06">Juin 2021</time></p>
+              <div class="tl-body">
+                <h3>Baccalauréat</h3>
+                <p class="tl-org">Lycée High-tech Azzahra · Rabat</p>
+                <p class="tl-text">Option Sciences Physiques.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <section class="certs" aria-labelledby="certs-title">
+          <div class="certs-head" data-reveal>
+            <h3 id="certs-title">Certificats Coursera</h3>
+            <p class="certs-count"><span class="certs-n" data-count="20">20</span> cours terminés à 100 %, de IBM, Meta et Google à l'EPFL et l'Université du Michigan.</p>
+          </div>
+
+          <div class="cert-filters" role="group" aria-label="Filtrer les certificats" data-reveal>
+            <button class="chip" type="button" data-filter="all" aria-pressed="true">Tous <span>20</span></button>
+            <button class="chip" type="button" data-filter="cloud" aria-pressed="false">Cloud et DevOps <span>5</span></button>
+            <button class="chip" type="button" data-filter="prog" aria-pressed="false">Programmation et IA <span>7</span></button>
+            <button class="chip" type="button" data-filter="web" aria-pressed="false">Web et mobile <span>5</span></button>
+            <button class="chip" type="button" data-filter="open" aria-pressed="false">Ouverture <span>3</span></button>
+          </div>
+
+          <ul class="cert-grid">
+            <li class="cert" data-cat="cloud" data-reveal>
+              <p class="cert-org">Packt</p>
+              <p class="cert-title">Advanced Spring Cloud Microservices &amp; Deployment with Docker</p>
+              <p class="cert-cat">Cloud et DevOps</p>
+            </li>
+            <li class="cert" data-cat="cloud" data-reveal>
+              <p class="cert-org">IBM</p>
+              <p class="cert-title">Introduction to Containers w/ Docker, Kubernetes &amp; OpenShift</p>
+              <p class="cert-cat">Cloud et DevOps</p>
+            </li>
+            <li class="cert" data-cat="cloud" data-reveal>
+              <p class="cert-org">Whizlabs</p>
+              <p class="cert-title">Virtual Networks in Azure</p>
+              <p class="cert-cat">Cloud et DevOps</p>
+            </li>
+            <li class="cert" data-cat="cloud" data-reveal>
+              <p class="cert-org">Google</p>
+              <p class="cert-title">Introduction to Git and GitHub</p>
+              <p class="cert-cat">Cloud et DevOps</p>
+            </li>
+            <li class="cert" data-cat="cloud" data-reveal>
+              <p class="cert-org">Johns Hopkins University</p>
+              <p class="cert-title">The Unix Workbench</p>
+              <p class="cert-cat">Cloud et DevOps</p>
+            </li>
+            <li class="cert" data-cat="prog" data-reveal>
+              <p class="cert-org">IBM</p>
+              <p class="cert-title">Machine Learning with Python</p>
+              <p class="cert-cat">Programmation et IA</p>
+            </li>
+            <li class="cert" data-cat="prog" data-reveal>
+              <p class="cert-org">University of Pennsylvania</p>
+              <p class="cert-title">Introduction to Java and Object-Oriented Programming</p>
+              <p class="cert-cat">Programmation et IA</p>
+            </li>
+            <li class="cert" data-cat="prog" data-reveal>
+              <p class="cert-org">The Hong Kong University of Science and Technology</p>
+              <p class="cert-title">Software Engineering: Software Design and Project Management</p>
+              <p class="cert-cat">Programmation et IA</p>
+            </li>
+            <li class="cert" data-cat="prog" data-reveal>
+              <p class="cert-org">École Polytechnique Fédérale de Lausanne</p>
+              <p class="cert-title">Introduction à la programmation orientée objet (en C++)</p>
+              <p class="cert-cat">Programmation et IA</p>
+            </li>
+            <li class="cert" data-cat="prog" data-reveal>
+              <p class="cert-org">University of Michigan</p>
+              <p class="cert-title">Programming for Everybody (Getting Started with Python)</p>
+              <p class="cert-cat">Programmation et IA</p>
+            </li>
+            <li class="cert" data-cat="prog" data-reveal>
+              <p class="cert-org">University of Colorado Boulder</p>
+              <p class="cert-title">The Structured Query Language (SQL)</p>
+              <p class="cert-cat">Programmation et IA</p>
+            </li>
+            <li class="cert" data-cat="prog" data-reveal>
+              <p class="cert-org">University of California, Irvine</p>
+              <p class="cert-title">The Arduino Platform and C Programming</p>
+              <p class="cert-cat">Programmation et IA</p>
+            </li>
+            <li class="cert" data-cat="web" data-reveal>
+              <p class="cert-org">Meta</p>
+              <p class="cert-title">React Native</p>
+              <p class="cert-cat">Web et mobile</p>
+            </li>
+            <li class="cert" data-cat="web" data-reveal>
+              <p class="cert-org">Johns Hopkins University</p>
+              <p class="cert-title">HTML, CSS, and Javascript for Web Developers</p>
+              <p class="cert-cat">Web et mobile</p>
+            </li>
+            <li class="cert" data-cat="web" data-reveal>
+              <p class="cert-org">University of Michigan</p>
+              <p class="cert-title">Introduction to HTML5</p>
+              <p class="cert-cat">Web et mobile</p>
+            </li>
+            <li class="cert" data-cat="web" data-reveal>
+              <p class="cert-org">University of Michigan</p>
+              <p class="cert-title">Introduction to CSS3</p>
+              <p class="cert-cat">Web et mobile</p>
+            </li>
+            <li class="cert" data-cat="web" data-reveal>
+              <p class="cert-org">University of Michigan</p>
+              <p class="cert-title">Interactivity with JavaScript</p>
+              <p class="cert-cat">Web et mobile</p>
+            </li>
+            <li class="cert" data-cat="open" data-reveal>
+              <p class="cert-org">École Polytechnique Fédérale de Lausanne</p>
+              <p class="cert-title">Villes africaines : environnement et enjeux de développement durable</p>
+              <p class="cert-cat">Ouverture</p>
+            </li>
+            <li class="cert" data-cat="open" data-reveal>
+              <p class="cert-org">École Polytechnique</p>
+              <p class="cert-title">La recherche documentaire</p>
+              <p class="cert-cat">Ouverture</p>
+            </li>
+            <li class="cert" data-cat="open" data-reveal>
+              <p class="cert-org">Duke University</p>
+              <p class="cert-title">Impact Measurement &amp; Management for the SDGs</p>
+              <p class="cert-cat">Ouverture</p>
+            </li>
+          </ul>
+        </section>
+
+        <a class="next-tab" href="#contact" data-reveal><span class="next-label">Suivant</span><span class="next-name">Contact</span><span class="next-arrow" aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="panel" id="contact" role="tabpanel" aria-labelledby="tab-contact" tabindex="-1">
+      <div class="wrap panel-body">
+        <header class="panel-head">
+          <p class="eyebrow" data-reveal>Contact</p>
+          <h2 data-reveal>Je cherche un premier poste d'ingénieur logiciel</h2>
+          <p class="panel-intro" data-reveal>Full stack ou orienté IA. Le plus simple pour me joindre est l'e-mail.</p>
+        </header>
+
+        <div class="contact-mail" data-reveal>
+          <a class="mail-link" id="email" href="mailto:othmaneal.pro@gmail.com">othmaneal.pro@gmail.com</a>
+          <button class="btn btn-ghost btn-small" id="copy-email" type="button" data-email="othmaneal.pro@gmail.com">Copier</button>
+          <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+        </div>
+
+        <ul class="contact-links" data-reveal>
+          <li><span>Téléphone</span><a href="tel:+212669500970">+212 6 69 50 09 70</a></li>
+          <li><span>GitHub</span><a href="https://github.com/othmanealpro-crypto" target="_blank" rel="noopener">github.com/othmanealpro-crypto</a></li>
+          <li><span>CV</span><a href="assets/cv-othmane-al-amrani.pdf" target="_blank" rel="noopener">Télécharger le CV (PDF)</a></li>
+          <li><span>Ville</span>Rabat, Maroc</li>
+        </ul>
+
+        <a class="next-tab" href="#accueil" data-reveal><span class="next-label">Retour</span><span class="next-name">Accueil</span><span class="next-arrow" aria-hidden="true">↺</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year">2026</span> Othmane Al Amrani</p>
+      <p>Rabat, Maroc</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
